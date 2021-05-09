@@ -61,7 +61,6 @@ const featureSlide = (next,prev) =>{
         featureIndex--
     }
 }
-
 featureNext.addEventListener('click',()=>{featureSlide(carNext,false)})
 featurePrev.addEventListener('click',()=>{featureSlide(false,carPrev)})
 // feature carousel end
@@ -113,7 +112,6 @@ const carouselArtistsPrev = (increase) =>{
     }
     index--
 }
-
 next.addEventListener('click',() => {carouselArtistsNext(carouselItems.length)})
 prev.addEventListener('click',() => {carouselArtistsPrev(carouselItems.length)})
 // carousel artists end

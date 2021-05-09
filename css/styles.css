@@ -868,12 +868,17 @@ a {
 }
 
 .container .artist__carousel-item {
+  cursor: pointer;
   margin: 0px 10px;
   min-width: 28%;
   background-color: #12121a;
   border-radius: 5px;
   -webkit-filter: drop-shadow(0px 0px 10px black);
           filter: drop-shadow(0px 0px 10px black);
+}
+
+.container .artist__carousel-item:hover {
+  background-color: #252535;
 }
 
 .container .artist__carousel-item img {
@@ -975,6 +980,8 @@ a {
   width: 5px;
   background-color: grey;
   border-radius: 100%;
+  -webkit-transition: 300mse;
+  transition: 300mse;
 }
 
 .container .artist__active {
