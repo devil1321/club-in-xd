@@ -6,70 +6,64 @@ let featureIndex = 0
 let time = 0
 let translate = 0
 let transition = 1
-console.log(featureItems)
-const featureNextSlide = () =>{
+let carPrev = true
+let carNext = true
+const featureSlide = (next,prev) =>{
     let items = featureItems[featureIndex].querySelectorAll('.feature__item')
-    translate-=120
-    items.forEach(item =>{
-        item.style.transition = `all 1s ease-in-out`
-    })
-    items.forEach(item =>{
-        setTimeout(()=>{
-            item.style.transform= `translateX(${translate}%)`
-            item.style.opacity = 0
-        },time+=200)
-    })
-    let newItems = featureItems[featureIndex+1].querySelectorAll('.feature__item')
-    newItems.forEach(item =>{
-        item.style.opacity = 0
-        item.style.transition = `all ${transition}s ease-in-out`
-    })
-    transition += 0.5
-    setTimeout(()=>{
-        newItems.forEach(item =>{
+    let newItems;
+    if(next && featureIndex < 2){
+        translate-=120
+    }
+    if(prev && featureIndex > 0){
+        newItems = featureItems[featureIndex-1].querySelectorAll('.feature__item')
+        translate+=120
+        transition -= 0.5
+    }
+    if(next && featureIndex < 2 || prev && featureIndex > 0) {
+        items.forEach(item =>{
+            item.style.transition = `all 1s ease-in-out`
+        })
+        items.forEach(item =>{
             setTimeout(()=>{
                 item.style.transform= `translateX(${translate}%)`
-                item.style.opacity = 1
+                item.style.opacity = 0
             },time+=200)
         })
-        time = 0
-    },200)
-    transiton = 0
-    featureIndex++
-}
-const featurePrevSlide = () =>{
-    let items = featureItems[featureIndex].querySelectorAll('.feature__item')
-    translate+=120
-    transition -= 0.5
-    items.forEach(item =>{
-        item.style.transition = `all 1s ease-in-out`
-    })
-    items.forEach(item =>{
-        setTimeout(()=>{
-            item.style.transform= `translateX(${translate}%)`
-            item.style.opacity = 0
-        },time+=200)
-    })
-    let newItems = featureItems[featureIndex-1].querySelectorAll('.feature__item')
-    newItems.forEach(item =>{
-        item.style.opacity = 0
-        item.style.transition = `all ${transition}s ease-in-out`
-    })
-    setTimeout(()=>{
+    }
+    if(next && featureIndex <= 2){
+        newItems = featureItems[featureIndex+1].querySelectorAll('.feature__item')
+    }
+    if(next && featureIndex < 2 || prev && featureIndex > 0){
         newItems.forEach(item =>{
-            setTimeout(()=>{
-                item.style.transform= `translateX(${translate}%)`
-                item.style.opacity = 1
-            },time+=200)
+            item.style.opacity = 0
+            item.style.transition = `all ${transition}s ease-in-out`
         })
-        time = 0
-    },200)
+    }
+    if(next && featureIndex < 2){
+        transition += 0.5
+    }
+    if(next && featureIndex < 2 || prev && featureIndex > 0){
+        setTimeout(()=>{
+            newItems.forEach(item =>{
+                setTimeout(()=>{
+                    item.style.transform= `translateX(${translate}%)`
+                    item.style.opacity = 1
+                },time+=200)
+            })
+            time = 0
+        },200)
+    }
     transiton = 0
-    featureIndex--
+    if(next && featureIndex < 2){
+        featureIndex++
+    }
+    if(prev && featureIndex > 0){
+        featureIndex--
+    }
 }
 
-featureNext.addEventListener('click',()=>{featureNextSlide()})
-featurePrev.addEventListener('click',()=>{featurePrevSlide()})
+featureNext.addEventListener('click',()=>{featureSlide(carNext,false)})
+featurePrev.addEventListener('click',()=>{featureSlide(false,carPrev)})
 // feature carousel end
 
 
