@@ -4,3 +4,355 @@
 @import './scss/mixins';
 @import './scss/animations';
 @import './scss/global';
+.container{
+    .header{
+        padding: 0px 80px;
+        position: relative;
+        top:0px;
+        left:0px;
+        max-width: 100vw;
+        height: 100vh;
+        @include createFlex('row',space-between,center,null);
+        &__circle{
+            position: absolute;
+            left:-35%;
+            top:-75%;
+            width:100%;
+            height:100vh;
+            img{
+                width: 100%;
+            }
+        }
+        .nav{
+            box-sizing:border-box;
+            padding: 10px 80px 0px;
+            position:absolute;
+            z-index: 10;
+            top:0px;
+            left:50%;
+            width: 100vw;
+            transform:translateX(-50%);
+            @include createFlex('row',space-between,center,null);
+            &__logo{
+                width: 20%;
+            }
+            &__list-wrapper{
+                width: 60%;
+                @include createFlex('row',center,center,null)
+            }
+            &__list{
+                width: 50%;
+                list-style-type: none;
+                margin:0px 30px;
+                @include createFlex('row',space-between,center,null)
+            }
+            &__nav-item{
+                font-weight: $fr-bold;
+                font-size: pxToRem(14);
+                margin:0px 20px;
+            
+            }
+            button{
+                @include button;
+            }
+            button:first-of-type{
+                @include button-bg;
+            }
+            button:last-of-type{
+                color:rgb(0, 183, 255);
+                height: 38px;
+                border:2px solid $light-green;
+            }
+
+
+        }
+        .hero{
+            position: relative;
+            top:0px;
+            left:0px;
+            z-index: 2;
+            @include createFlex(row,space-between,center,wrap);
+            &__text{
+                margin-top:50px;
+                width: 50%;
+                p{
+                    word-spacing:5px;
+                    font-weight: $fr-bold;
+                }
+            }
+            &__circle{
+                cursor: pointer;
+                width: 50%;
+                position: relative;
+                top:0px;
+                left:0px;
+                &::before{
+                    content: '';
+                    width: 182%;
+                    height: 182%;
+                    position: absolute;
+                    left:-31%;
+                    top:-36%;
+                    background-image: url('../assets/hero-image-circle.png');
+                    background-size: 100%;
+                    transition: all 300ms ease-in-out;
+                    transform-origin:50% 52%;
+                }
+                img{
+                    display: block;
+                    margin-left: auto;
+                    padding-top: 100px;
+                    width: 80%;
+                }
+            }
+            button{
+                @include button;
+                @include button-bg;
+                height: 45px;
+                width: 180px;
+       
+            }
+        }
+    }
+    .feature{
+        @include createFlex(row,space-between,flex-start,wrap);
+        &__circle{
+            position: absolute;
+            left:-80%;
+            top:50%;
+            width:100%;
+            height:100vh;
+            img{
+                width: 100%;
+            }
+        }
+        &__image-item{
+            width: 50%;
+            img{
+                display: block;
+                width: 95%;
+                margin-left: auto;
+            }
+        }
+        &__text-image{
+            box-sizing: border-box;
+            padding:5px 10px;
+            margin:0px auto;
+            position: relative;
+            top:-266px;
+            left:17px;
+            width: 80.3%;
+            background-color: rgba(0, 0, 0, 0.671);
+            border-bottom-left-radius:5px;
+            border-bottom-right-radius:5px;
+            i{
+                margin-right: 5px;
+                font-size: pxToRem(20);
+            }
+            
+        }
+        &__text-heading{
+            @include createFlex(row,space-between,center,null);
+            i{
+                color:$purple;            
+            }
+        }
+        &__text-body{
+            width: 95%;
+            line-height: 1.5;
+        }
+        &__text-footer{
+            text-align: right;
+            @include createFlex(row,flex-end,center,null);
+            i{
+                background: $gradient-purple;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;        
+            }
+        }
+        &__text{
+            box-sizing: border-box;
+            padding-top: 35px;
+            padding-right: 100px;
+            width: 50%;
+            .event{
+                padding:5px 0px 5px 10px;
+                width: 100px;
+                color:$light-green;
+                background-color:$light-bg;
+            }
+        }
+        &__item{
+            @include createFlex(row,space-between,center,null);
+            font-weight: $fr-bold;
+            background-color: $bg-item;
+            margin: 15px 0px;
+            height:60px;
+            padding:0px 0px 0px 20px;
+            border-radius: 5px;
+            filter:drop-shadow(0px 0px 10px black);
+            h2{
+                font-size: pxToRem(40);
+                color:$purple;
+            }
+            button{
+                @include button;
+                height:100%;
+                width: 100px;
+                background-color: $pink;
+                margin: 0px;
+                padding:0px;
+                height:100%;
+            }
+            &-day,&-time{
+                color:$light-green;
+                p{
+                        margin: 4px 0px;
+                        color:$light-green;
+                }
+            }
+        }
+        &__controls{
+            float: right;
+            width: 70px;
+            color:$light-green;
+            margin-right: 53px;
+            div{
+                padding:10px 20px;
+                margin: 0px 5px;
+                border:1px solid $light-green;
+                border-radius: 5px;
+                @include createFlex(row,center,center,null);
+            }
+            @include createFlex(row,space-between,center,null)
+        }
+    }
+    .artist{
+        margin-top: -200px;
+        &__title{
+            text-align: center;
+            color:$light-green;
+        }
+        &__carousel{
+            @include createFlex(row,center,center,null);
+            list-style-type: none;
+            padding:0px;
+            margin: 0px;
+            &-item{
+               margin: 0px 10px;
+                width: 28%;
+                background-color: $bg-item;
+                border-radius: 5px;
+                img{
+                    width: 100%;
+                }
+                &-heading,&-location{
+                    i{
+                        margin-right: 10px;
+                    }
+                    @include createFlex(row,space-between,center,null)
+                }
+                &-heading,&-text{
+                    padding:0px 20px;
+                }
+                &-heading{
+                    p{color:$light-green;}
+                    i{
+                        background: $gradient-purple;
+                        -webkit-background-clip: text;
+                        -webkit-text-fill-color: transparent;        
+                    }
+                }
+                &-line{
+                    width: 60%;
+                    border-bottom: 2px solid $purple;
+                }
+                
+                                
+            }
+        }
+        &__carousel-controls{
+            margin-top: 30px;
+            @include createFlex(row,center,center,null);
+            .prev,.next{
+                padding:10px 20px;
+                margin: 0px 5px;
+                border:1px solid $light-green;
+                border-radius: 5px;
+                @include createFlex(row,center,center,null);
+                i{
+                    color:$light-green;
+                }
+            }
+            .prev{
+                margin-right: 50px;
+            }
+            .next{
+                margin-left: 50px;
+            }
+            .dot{
+                margin:0px 10px;
+                height: 5px;
+                width: 5px;
+                background-color: grey;
+                border-radius: 100%;
+            }
+        }
+        &__active{
+            height: 10px !important;
+            width: 10px !important;
+            background-color: $light-green !important;
+            border-radius: 100% !important; 
+            filter: drop-shadow(0px 0px 5px $light-green);
+        }
+    }
+    .subscribe{
+        margin-top: 30px;
+        height: 100%;
+        width: 100%;
+        &__form-wrapper{
+            box-sizing: border-box;
+            padding:50px 80px;
+            width: 100%;
+            height: 300px;
+            background-image: url('../assets/subscribe.png');
+            background-size: cover;
+        
+        }
+        &__form{
+            box-sizing: border-box;
+            padding:0px 70px;
+            width: 100%;
+            height: 200px;
+            background-color: $bg-item;
+            box-shadow:0px 0px 5px rgba(255,255,255,0.05)inset;
+            @include createFlex(row,space-between,center,wrap);
+            &-input{
+                width: 60%;
+                input{
+                    padding-left: 15px;
+                    width: 60%;
+                    height: 40px;
+                    border:0px;
+                    outline: none;
+                    border-top-left-radius: 5px;
+                    border-bottom-left-radius: 5px;
+                }
+                
+                button{
+                    @include button;
+                    @include button-bg;
+                    width:25%;
+                    height: 42px;
+                    margin: 0px;
+                    margin-left: -7px;
+                    filter: drop-shadow(0px 0px 0px black);
+                }
+            }
+        }
+    }
+    .artist-inner{}
+    .party{}
+    .contacts{}
+    .footer{}
+}

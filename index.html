@@ -11,6 +11,7 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="./css/styles.css" as="stylesheet" onload="this.rel='stylesheet'">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" as="stylesheet" onload="this.rel='stylesheet'">
     </head>
     <body>
         <!--[if lt IE 7]>
@@ -19,6 +20,9 @@
         <div class="container">
 
             <div class="header">
+                <div class="header__circle">
+                  <img src="./assets/circles.png" alt="circle-bg">
+                </div>
                 <div class="nav">
                     <img src="./assets/logo.png" alt="logo" class="nav__logo">
                     <div class="nav__list-wrapper">
@@ -39,151 +43,161 @@
                         <button>See All Events</button>
                     </div>
                     <div class="hero__circle">
-                        <img src="" alt="">
+                        <img src="./assets/hero-image.png" alt="">
                     </div>
                 </div>
             </div>
 
             <div class="feature">
+                <div class="feature__circle">
+                    <img src="./assets/circles.png" alt="circle-bg">
+                </div>
                 <div class="feature__image-item">
-                    <img src="" alt="">
-                    <div class="feature__text">
+                    <img src="./assets/feature-image.png" alt="">
+                    <div class="feature__text-image">
                         <div class="feature__text-heading">
                             <h2>Award Events</h2>
-                            <p><i></i>30.11.2020</p>
+                            <p><i class="fa fa-calendar"></i>30.11.2020</p>
                         </div>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, atque eaque eius esse et harum inventore ipsam  nam necessitatibus nemo pariatur provident.</p>
-                        <p><i></i>New York, NY</p>
+                        <p class="feature__text-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, atque eaque eius esse et harum inventore ipsam  nam necessitatibus nemo pariatur provident.</p>
+                        <p class="feature__text-footer"><i class="fa fa-map-marker-alt"></i>New York, NY</p>
                     </div>
                 </div>
                 <div class="feature__text">
-                    <p>Event</p>
+                    <p class="event">Event</p>
                     <div class="feature__item">
                         <h2>28</h2>
-                        <div>
+                        <div class="feature__item-day">
                             <p>Spetember</p>
                             <p>Friday</p>
                         </div>
                         <p>The legendary DJ Supernova</p>
-                        <p>9pm-4am</p>
+                        <p class="feature__item-time">9pm-4am</p>
                        <button>Book Event</button>
                     </div>
                     <div class="feature__item">
                         <h2>28</h2>
-                        <div>
+                        <div class="feature__item-day">
                             <p>Spetember</p>
                             <p>Friday</p>
                         </div>
                         <p>The legendary DJ Supernova</p>
-                        <p>9pm-4am</p>
+                        <p class="feature__item-time">9pm-4am</p>
                        <button>Book Event</button>
                     </div>
                     <div class="feature__item">
                         <h2>28</h2>
-                        <div>
+                        <div class="feature__item-day">
                             <p>Spetember</p>
                             <p>Friday</p>
                         </div>
                         <p>The legendary DJ Supernova</p>
-                        <p>9pm-4am</p>
+                        <p class="feature__item-time">9pm-4am</p>
                        <button>Book Event</button>
                     </div>
                     <div class="feature__item">
                         <h2>28</h2>
-                        <div>
+                        <div class="feature__item-day">
                             <p>Spetember</p>
                             <p>Friday</p>
                         </div>
                         <p>The legendary DJ Supernova</p>
-                        <p>9pm-4am</p>
+                        <p class="feature__item-time">9pm-4am</p>
                        <button>Book Event</button>
                     </div>
                     <div class="feature__item">
                         <h2>28</h2>
-                        <div>
+                        <div class="feature__item-day">
                             <p>Spetember</p>
                             <p>Friday</p>
                         </div>
                         <p>The legendary DJ Supernova</p>
-                        <p>9pm-4am</p>
+                        <p class="feature__item-time">9pm-4am</p>
                        <button>Book Event</button>
+                    </div>
+                    
+                    <div class="feature__controls">
+                        <div class="feature__prev"><i class="fa fa-arrow-left"></i></div>
+                        <div class="feature__next"><i class="fa fa-arrow-right"></i></div>
                     </div>
                 </div>
             </div>
 
             <div class="artist">
-                <h2>ARTIST</h2>
+                <h2 class="artist__title">ARTIST</h2>
                 <ul class="artist__carousel">
                     <li class="artist__carousel-item">
                         <div class="artist__carousel-item-heading">
-                            <div class="artist__carousel-item-location"><i></i><p>New York, <i class="fas fa-vote-nay    "></i></p></div>
+                            <div class="artist__carousel-item-location"><i class="fa fa-map-marker-alt"></i><p>New York <i class="fas fa-vote-nay    "></i></p></div>
                             <P>Musican</P>
                         </div>
                         <img src="./assets/feature-card-1.png" alt="">
-                        <div class="artist__carouse-item-text">
+                        <div class="artist__carousel-item-text">
                             <h2>Blake Shelton</h2>
-                            <div class="line"></div>
+                            <div class="artist__carousel-item-line"></div>
                             <p>Lorem ipsum dolor sit amet, atque eaque eius esse et harum inventore ipsam  nam necessi is the tatibus nemo pariatur provident.</p>
                         </div>
                     </li>
                     <li class="artist__carousel-item">
                         <div class="artist__carousel-item-heading">
-                            <div class="artist__carousel-item-location"><i></i><p>New York, <i class="fas fa-vote-nay    "></i></p></div>
+                            <div class="artist__carousel-item-location"><i class="fa fa-map-marker-alt"></i><p>New York <i class="fas fa-vote-nay    "></i></p></div>
                             <P>Musican</P>
                         </div>
-                        <img src="./assets/feature-card-1.png" alt="">
-                        <div class="artist__carouse-item-text">
+                        <img src="./assets/feature-card-2.png" alt="">
+                        <div class="artist__carousel-item-text">
                             <h2>Steve Angello</h2>
-                            <div class="line"></div>
+                            <div class="artist__carousel-item-line"></div>
                             <p>Lorem ipsum dolor sit amet, atque eaque eius esse et harum inventore ipsam  nam necessi is the tatibus nemo pariatur provident.</p>
                         </div>
                     </li>
                     <li class="artist__carousel-item">
                         <div class="artist__carousel-item-heading">
-                            <div class="artist__carousel-item-location"><i></i><p>New York, <i class="fas fa-vote-nay    "></i></p></div>
+                            <div class="artist__carousel-item-location"><i class="fa fa-map-marker-alt"></i><p>New York</p></div>
                             <P>Musican</P>
                         </div>
-                        <img src="./assets/feature-card-1.png" alt="">
-                        <div class="artist__carouse-item-text">
+                        <img src="./assets/feature-card-3.png" alt="">
+                        <div class="artist__carousel-item-text">
                             <h2>Blake Shelton</h2>
-                            <div class="line"></div>
+                            <div class="artist__carousel-item-line"></div>
                             <p>Lorem ipsum dolor sit amet, atque eaque eius esse et harum inventore ipsam  nam necessi is the tatibus nemo pariatur provident.</p>
                         </div>
                     </li>
                 </ul>
                 <div class="artist__carousel-controls">
-                    <div class="prev"></div>
+                    <div class="prev"><i class="fa fa-arrow-left"></i></div>
                     <div class="dot"></div>
                     <div class="dot"></div>
                     <div class="dot"></div>
-                    <div class="dot"></div>
-                    <div class="next"></div>
+                    <div class="dot artist__active"></div>
+                    <div class="next"><i class="fa fa-arrow-right"></i></div>
                 </div>
             </div>
 
             <div class="subscribe">
 
-                <div class="subscribe-form-wrapper">
-                    <form class="subsribe__form">
-                        <div class="subsribe__form-text">
-                            <h1>Subscribe</h1>
+                <div class="subscribe__form-wrapper">
+                    <form class="subscribe__form">
+                        <div class="subscribe__form-text">
+                            <h2>Subscribe</h2>
                             <p>To receive info on our latest news and episodes</p>
                         </div>
-                        <input type="text">
-                        <button type="submit">Subscribe</button>
+                        <div class="subscribe__form-input">
+                            <input type="text">
+                            <button type="submit">Subscribe</button>
+                        </div>
                     </form>
                 </div>
 
                 <div class="subscribe__article">
                     <div class="subscribe__article">
-                        <h1>About Cloobin</h1>        
+                        <h2>ABOUT CLOOBIN</h2>        
                         <div class="line"></div>
                         <p>You begin with a text, you sculpt information, you chisel away what's not needed, you come to the point, make things clear, add value, you're a content person, you like words. Design is no afterthought, far from it, but it comes in a deserved second. Anyway, you still use Lorem Ipsum and rightly so, as it will always have a place in the web workers toolbox, as things happen, not always the way you like it, not always in the preferred order. Even if your less into design and more into content strategy you may find some redeeming value with, wait for it, dummy copy, no less.
                         </p>
                     </div>
                     <div class="subsribe__article-images">
-                        <img src="" alt="">
-                        <img src="" alt="">
+                        <img src="./assets/ball-sm.png" alt="">
+                        <img src="./assets/ball-md.png" alt="">
                     </div>
                 </div>
                 <div class="subsribe__footer">
