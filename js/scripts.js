@@ -81,7 +81,7 @@ const setActive = (position) =>{
     })
     carouselActiveDots[position].classList.add('artist__active')
 }
-const carouselArtistsNext = (increase) =>{
+const carouselArtistsNext = () =>{
     if(index < 3){
         margin-=405
         carouselArtist.style.transform =`translateX(${margin}px)`;
@@ -97,7 +97,7 @@ const carouselArtistsNext = (increase) =>{
     index++
    
 }
-const carouselArtistsPrev = (increase) =>{
+const carouselArtistsPrev = () =>{
     if(index > -3){
         margin+=405
         carouselArtist.style.transform =`translateX(${margin}px)`;
@@ -115,3 +115,35 @@ const carouselArtistsPrev = (increase) =>{
 next.addEventListener('click',() => {carouselArtistsNext(carouselItems.length)})
 prev.addEventListener('click',() => {carouselArtistsPrev(carouselItems.length)})
 // carousel artists end
+const carouselInner = document.querySelector('.artist-inner__carousel')
+const prevInner = document.querySelector('.prev-inner')
+const nextInner = document.querySelector('.next-inner')
+let marginInner = 0
+let innerIndex = 0
+const carouselInnerNext = () =>{
+    if(innerIndex < 3){
+        marginInner-=105.5
+        carouselInner.style.transform =`translateX(${marginInner}%)`;
+    }else if(innerIndex === 3){
+        marginInner = 0
+        innerIndex = -1
+        carouselInner.style.transform =`translateX(${marginInner}%)`;
+    }
+    innerIndex++
+   
+}
+const carouselInnerPrev = () =>{
+    console.log(innerIndex)
+    if(innerIndex > 0){
+        marginInner+=105.5
+        carouselInner.style.transform =`translateX(${marginInner}%)`;
+    }else if(innerIndex === 0){
+        marginInner-=105.5 * 3
+        innerIndex = 4
+        carouselInner.style.transform =`translateX(${marginInner}%)`;
+    }
+    innerIndex--  
+}
+
+prevInner.addEventListener('click',carouselInnerPrev)
+nextInner.addEventListener('click',carouselInnerNext)

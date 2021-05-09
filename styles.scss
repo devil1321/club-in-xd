@@ -217,8 +217,8 @@
                 background-color: $pink;
                 margin: 0px;
                 padding:0px;
-                height:100%;
-            }
+                height:100%;    
+            }        
             &-day,&-time{
                 color:$light-green;
                 p{
@@ -444,7 +444,9 @@
         background-position: center center;
         height: 600px;
         @include createFlex(row,center,center,null);    
+     
         &__carousel-wrapper{
+            overflow-x: hidden;
             padding:50px;
             width: 70%;
             background-color: $bg-item;
@@ -471,10 +473,14 @@
             }
         }
         &__carousel{
+            @include createFlex(row,flex-start,center,null)
+            transition: all 1s ease-in-out;
             margin: 0px;
             padding:0px;
             list-style-type: none;
             &-item{
+                min-width:100%;
+                margin-right:55px;
                 p{text-align: center;}
             }
         }
