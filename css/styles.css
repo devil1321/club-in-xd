@@ -718,6 +718,27 @@ a {
   background-color: #29224e;
 }
 
+.container .feature__event-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.container .feature__event {
+  min-width: 100%;
+  margin-right: 100px;
+}
+
 .container .feature__item {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -738,6 +759,8 @@ a {
   height: 60px;
   padding: 0px 0px 0px 20px;
   border-radius: 5px;
+  -webkit-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
   -webkit-filter: drop-shadow(0px 0px 10px black);
           filter: drop-shadow(0px 0px 10px black);
 }
@@ -840,11 +863,13 @@ a {
   list-style-type: none;
   padding: 0px;
   margin: 0px;
+  -webkit-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
 }
 
 .container .artist__carousel-item {
   margin: 0px 10px;
-  width: 28%;
+  min-width: 28%;
   background-color: #12121a;
   border-radius: 5px;
   -webkit-filter: drop-shadow(0px 0px 10px black);
