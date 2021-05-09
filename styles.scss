@@ -170,6 +170,7 @@
             text-align: right;
             @include createFlex(row,flex-end,center,null);
             i{
+                background-clip: text;
                 background: $gradient-purple;
                 -webkit-background-clip: text;
                 -webkit-text-fill-color: transparent;        
@@ -264,6 +265,7 @@
                 &-heading{
                     p{color:$light-green;}
                     i{
+                        background-clip: text;
                         background: $gradient-purple;
                         -webkit-background-clip: text;
                         -webkit-text-fill-color: transparent;        
@@ -413,7 +415,7 @@
             left:-15%;
             width: 150px;
             
-            @include createFlex(row,space-between,center,null)
+            @include createFlex(row,space-between,center,null);
             img{
                 margin:0px 10px;
                 width: 100%;
@@ -440,7 +442,7 @@
         }
         &__carousel-controls{
             color:$light-green;
-            @include createFlex(row,space-between,center,null)
+            @include createFlex(row,space-between,center,null);
             position:absolute;
             right: 10px;
             top:10px;

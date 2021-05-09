@@ -697,6 +697,7 @@ a {
 }
 
 .container .feature__text-footer i {
+  background-clip: text;
   background: linear-gradient(-45deg, #ff00f5, #7900FF);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -883,6 +884,7 @@ a {
 }
 
 .container .artist__carousel-item-heading i {
+  background-clip: text;
   background: linear-gradient(-45deg, #ff00f5, #7900FF);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
