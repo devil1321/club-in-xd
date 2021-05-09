@@ -545,6 +545,99 @@
             }
         }
     }
-    .contacts{}
-    .footer{}
+    .contacts{
+        position: relative;
+        top:0px;
+        left:0px;
+        margin-top: 120px;
+        padding:100px 80px 50px;
+        background: $gradient-purple;
+        &__image{
+            position:absolute;
+            right: 20px;
+            top:-100px;
+            width: 20%;
+        }
+        h2,p{
+            color:black;
+        }
+        p{
+            line-height: 1.5;
+            margin-top: 20px;
+        }
+        button{
+            font-weight: $fr-bold;
+            display: block;
+            padding:10px 40px;
+            margin:70px auto 0px;
+            border-radius: 5px;
+            background: $dark-bg;
+            border:0px;
+            outline: none;
+            filter: drop-shadow(0px 0px 10px rgba(0,0,0,0.3));
+        }
+    }
+    .footer{
+        font-family: $f-roboto;
+        h3{
+            font-size: pxToRem(16);
+            color:$light-green;
+        }
+        p,ul{
+            font-size: pxToRem(13);
+        }
+        p{
+            line-height: 1.5;
+        }
+        padding:40px 80px;
+        @include createFlex(row,flex-start,center,wrap);
+        &__article{
+            @include createFlex(row,flex-start,flex-start,wrap);
+        }
+        &__icons{
+            @include createFlex(row,center,center,null);
+        }
+        &__icon{
+            height: 30px;
+            width: 30px;
+            @include createFlex(row,center,center,null);
+            border:2px solid $light-green;
+            border-radius: 100%;
+            margin-right: 8px;
+            i{
+                color:$light-green;
+            }
+        }
+        &__column-1{
+            width: 40%;
+            img{
+                width: 40%;
+            }
+        }
+        &__column-2{
+            width: 10%;
+         
+           
+        }
+        &__column-3{
+            width: 10%;
+            margin: 0px;
+            padding:0px;
+            margin-left: 100px;
+            list-style-type: none;
+            color:white;
+            li{
+                margin: 10px 0px;
+            }
+        }
+        &__column-4{
+            margin-left: 100px;
+            width: 20%;
+        }
+        &__foot{
+            margin-top: 50px;
+            margin-left: auto;
+            margin-right: 330px;
+        }
+    }
 }
