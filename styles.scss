@@ -118,6 +118,7 @@
         @include createFlex(row,space-between,flex-start,wrap);
         &__circle{
             position: absolute;
+            z-index: 1;
             left:-80%;
             top:50%;
             width:100%;
@@ -132,6 +133,10 @@
                 display: block;
                 width: 95%;
                 margin-left: auto;
+                position: relative;
+                top:0px;
+                left:0px;
+                z-index: 2;
             }
         }
         &__text-image{
@@ -309,7 +314,8 @@
     }
     .subscribe{
         margin-top: 30px;
-        height:1000px;
+        padding-bottom: 50px;
+        height:100%;
         width: 100%;
         background: $gradient-purple;
         &__form-wrapper{
@@ -395,7 +401,7 @@
         &__footer{
             box-sizing: border-box;
             padding:0px 80px;
-            margin-top: 80px;
+            margin-top: 30px;
             width: 100%;
             @include createFlex(row,space-between,center,wrap);
             &-logo{
@@ -414,8 +420,131 @@
             }
         }
     }
-        .artist-inner{}
-        .party{}
-        .contacts{}
-        .footer{}
+    .artist-inner{
+        background-image: url('../assets/about-image.png');
+        background-size: cover;
+        background-position: center center;
+        height: 600px;
+        @include createFlex(row,center,center,null);    
+        &__carousel-wrapper{
+            padding:50px;
+            width: 70%;
+            background-color: $bg-item;
+            position: relative;
+            top:0px;
+            left:0px;
+        }
+        &__carousel-heading{
+            @include createFlex(row,center,center,null);
+            h2{color:$light-green;}
+        }
+        &__carousel-controls{
+            color:$light-green;
+            @include createFlex(row,space-between,center,null)
+            position:absolute;
+            right: 10px;
+            top:10px;
+            div{
+                padding:10px 20px;
+                margin: 0px 5px;
+                border:1px solid $light-green;
+                border-radius: 5px;
+                @include createFlex(row,center,center,null);
+            }
+        }
+        &__carousel{
+            margin: 0px;
+            padding:0px;
+            list-style-type: none;
+            &-item{
+                p{text-align: center;}
+            }
+        }
+        button{
+            @include button;
+            @include button-bg;
+            display: block;
+            width: 180px;
+            height: 40px;
+            border-radius: 8px;
+            font-weight: $fr-reg;
+            margin:0px auto;
+        }
+    }
+    .party{
+        padding:0px 80px;
+        &__heading{
+            @include createFlex(row,space-between,center,null);
+            h2{
+                text-transform: uppercase;
+                color:$light-green;
+            }
+        }
+        &__images{
+            @include createFlex(row,flex-start,center,wrap);
+        }
+        &__image{
+            margin-top: 20px;
+            margin-right: 20px;
+            overflow:hidden;
+            height: 500px;
+            img{width: 100%;}
+        }
+        &__image:nth-of-type(1){
+            width: 45%;
+            img{
+                width: 140%;
+            }
+        }
+        &__image:nth-of-type(2){
+            width: 25%;
+            img{
+                width: 140%;
+            }
+        }
+        &__image:nth-of-type(3){
+            width: 25%;
+            img{
+                width: 140%;
+            }
+        }
+        &__image:nth-of-type(4){
+            width: 20%;
+            img{
+                width: 145%;
+            }
+        }
+        &__image:nth-of-type(5){
+            width: 55%;
+            img{
+                width: 125%;
+            }
+        }
+        &__image:nth-of-type(6){
+            width: 20%;
+            img{
+                width: 110%;
+            }
+        }
+        &__image:nth-of-type(7){
+            width: 35%;
+            img{
+                width: 120%;
+            }
+        }
+        &__image:nth-of-type(8){
+            width: 25%;
+            img{
+                width: 120%;
+            }
+        }
+        &__image:nth-of-type(9){
+            width: 35%;
+            img{
+                width: 135%;
+            }
+        }
+    }
+    .contacts{}
+    .footer{}
 }
