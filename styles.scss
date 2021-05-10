@@ -17,6 +17,10 @@
             height: 40vh;
             padding: 0px 50px;
         }
+        @include breakpoint-down-l(medium){
+            height: 70vh;
+            padding: 0px 50px;
+        }
         @media only screen 
         and (min-device-width: 1366px) 
         and (max-device-width: 1366px) 
@@ -53,6 +57,9 @@
             &__list-wrapper{
                 width: 60%;
                 @include createFlex('row',center,center,null)
+                @include breakpoint-down(medium-sm){
+                    width: 50%;
+                }
             }
             &__list{
                 width: 50%;
@@ -90,6 +97,9 @@
             }
             button{
                 @include button;
+                @include breakpoint-down(medium-sm){
+                    min-width: 100px;
+                }
             }
             button:first-of-type{
                 @include button-bg;
@@ -195,13 +205,18 @@
                 z-index: 2;
                 @include breakpoint-down(medium){
                     margin:0px;
-                }            }
+                }            
+                @include breakpoint-down(medium-sm){
+                    margin-top:80px;
+                }
+            }
         }
         &__text-image{
             box-sizing: border-box;
             padding:5px 10px;
             margin:0px auto;
             position: relative;
+            z-index: 2;
             top:-266px;
             left:17px;
             width: 80.3%;
@@ -211,7 +226,11 @@
             @include breakpoint-down(medium){
                 top:-278px;
                 left:-13px;
-                z-index: 2;
+            }
+            @include breakpoint-down(medium-sm){
+                width: 81%;
+                top:-278px;
+                left:-10px;
             }
             i{
                 margin-right: 5px;
@@ -278,12 +297,23 @@
                 @include breakpoint-down(medium){
                     font-size: pxToRem(30);
                 }
-            }
-            p{
-                @include breakpoint-down(medium){
-                    font-size: pxToRem(14);
+                @include breakpoint-down(medium-sm){
+                    font-size: pxToRem(25);
                 }
             }
+            p{
+                padding:0px 5px;
+                font-size: pxToRem(14);
+                @include breakpoint-down(medium){
+                    font-size: pxToRem(13);
+                    padding:0px 5px;
+                }
+                @include breakpoint-down(medium-sm){
+                    padding:0px 5px;
+                    font-size: pxToRem(12);
+                }
+            }
+      
             button{
                 @include button;
                 height:100%;
@@ -294,6 +324,10 @@
                 height:100%;    
                 @include breakpoint-down(medium){
                     min-width: 100px;
+                }
+                @include breakpoint-down(medium-sm){
+                    min-width: 60px;
+                    font-size: pxToRem(12);
                 }
             }        
             &-day,&-time{
@@ -345,6 +379,9 @@
                 background-color: $bg-item;
                 border-radius: 5px;
                 filter: drop-shadow(0px 0px 10px black);
+                @include breakpoint-down(medium-sm){
+                    min-width: 30%;
+                }
                 &:hover{
                     background-color: $bg-item-hover;
                 }
@@ -360,6 +397,9 @@
                 }
                 &-heading,&-text{
                     padding:0px 20px;
+                    @include breakpoint-down(medium-sm){
+                        padding:0px 10px;
+                    }
                 }
                 &-heading{
                     p{color:$light-green;}
@@ -436,7 +476,6 @@
             height: 300px;
             background-image: url('../assets/subscribe.png');
             background-size: cover;
-        
         }
         &__form{
             box-sizing: border-box;
@@ -446,6 +485,17 @@
             background-color: $bg-item;
             box-shadow:0px 0px 5px rgba(255,255,255,0.05)inset;
             @include createFlex(row,space-between,center,wrap);
+            @include breakpoint-down(medium-sm){
+                padding:0px 35px;
+            }
+            &-text{
+                @include breakpoint-down(medium-sm){
+                    width: 50%;
+                    p{
+                        width: 90%;
+                    }
+                }    
+            }
             &-input{
                 width: 60%;
                 @include breakpoint-down(medium){
@@ -474,12 +524,19 @@
                     @include breakpoint-down(medium){
                         min-width: 30%;
                     }
+                    @include breakpoint-down(medium-sm){
+                        min-width: 32%;
+                        background-size: 250%
+                    }
                 }
             }
         }
         &__article{
             @include createFlex(row,space-between,flex-start,wrap);
             padding:80px;
+            @include breakpoint-down(medium-sm){
+                padding: 120px 50px 0px;
+            }
            h2,p{
                color: black;
            }
@@ -489,6 +546,9 @@
         }
         &__text{
             width: 60%;
+            @include breakpoint-down(medium-sm){
+                width: 100%;
+            }
         }
         &__line{
             width: 30%;
@@ -505,6 +565,10 @@
                 left:-20px;
                 top:0px;
                 z-index: 2;
+                @include breakpoint-down(medium-sm){
+                    left:250%;
+                    top:-430px;
+                }
             }
             img:last-of-type{
                 width: 80%;
@@ -512,6 +576,10 @@
                 left:80px;
                 top:70px;
                 z-index: 1;
+                @include breakpoint-down(medium-sm){
+                    left:270%;
+                    top:-410px;
+                }
             }
 
         }
@@ -521,6 +589,9 @@
             margin-top: 30px;
             width: 100%;
             @include createFlex(row,space-between,center,wrap);
+            @include breakpoint-down(medium-sm){
+                padding:0px 140px 0px 50px;
+            }
             &-logo{
                width: 20%;
             }
@@ -641,10 +712,16 @@
             @include breakpoint-down(medium){
                 width: 43%;
             }
+            @include breakpoint-down(medium-sm){
+                width: 40%;
+            }
             img{
                 width: 140%;
                 @include breakpoint-down(medium){
                     width: 180%;
+                }
+                @include breakpoint-down(medium-sm){
+                    width: 240%;
                 }
             }
         }
@@ -655,6 +732,9 @@
                 @include breakpoint-down(medium){
                     width: 200%;
                 }
+                @include breakpoint-down(medium-sm){
+                    width: 240%;
+                }
             }
         }
         &__image:nth-of-type(3){
@@ -663,6 +743,9 @@
                 width: 140%;
                 @include breakpoint-down(medium){
                     width: 200%;
+                }
+                @include breakpoint-down(medium-sm){
+                    width: 240%;
                 }
             }
         }
@@ -673,6 +756,9 @@
                 @include breakpoint-down(medium){
                     width:230%;
                 }
+                @include breakpoint-down(medium-sm){
+                    width: 260%;
+                }
             }
         }
         &__image:nth-of-type(5){
@@ -680,10 +766,16 @@
             @include breakpoint-down(medium){
                 width: 53%;
             }
+            @include breakpoint-down(medium-sm){
+                width: 50%;
+            }
             img{
                 width: 135%;
                 @include breakpoint-down(medium){
                     width:180%;
+                }
+                @include breakpoint-down(medium-sm){
+                    width: 240%;
                 }
             }
         }
@@ -698,10 +790,16 @@
         }
         &__image:nth-of-type(7){
             width: 33%;
+            @include breakpoint-down(medium-sm){
+                width: 30%;
+            }
             img{
                 width: 130%;
                 @include breakpoint-down(medium){
                     width:180%;
+                }
+                @include breakpoint-down(medium-sm){
+                    width: 240%;
                 }
             }
         }
@@ -712,6 +810,9 @@
                 @include breakpoint-down(medium){
                     width:180%;
                 }
+                @include breakpoint-down(medium-sm){
+                    width: 240%;
+                }
             }
         }
         &__image:nth-of-type(9){
@@ -720,6 +821,9 @@
                 width: 145%;
                 @include breakpoint-down(medium){
                     width:200%;
+                }
+                @include breakpoint-down(medium-sm){
+                    width: 240%;
                 }
             }
         }
@@ -779,7 +883,9 @@
         }
         &__icons{
             @include createFlex(row,center,center,null);
-            
+            @include breakpoint-down(medium-sm){
+                @include createFlex(row,flex-start,center,null);
+            }
         }
         &__icon{
             height: 30px;
@@ -797,17 +903,27 @@
             @include breakpoint-down(medium){
                 width: 35%;;
             }
+            @include breakpoint-down(medium-sm){
+                width: 30%;
+            }
             img{
                 width: 40%;
                 @include breakpoint-down(medium){
-                width: 50%;;
-            }
+                    width: 50%;;
+                }
+                @include breakpoint-down(medium-sm){
+                    width: 70%;
+                }
             }
         }
         &__column-2{
             width: 10%;
             @include breakpoint-down(medium){
                 width: 15%;;
+            }
+            @include breakpoint-down(medium-sm){
+                width: 30%;
+                margin-left: 50px;
             }
         }
         &__column-3{
@@ -819,6 +935,10 @@
             color:white;
             @include breakpoint-down(medium){
                 margin-left: 50px;
+            }
+            @include breakpoint-down(medium-sm){
+                width: 30%;
+                margin-left: 10px;
             }
             li{
                 margin: 10px 0px;
@@ -834,11 +954,19 @@
         &__column-4{
             margin-left: 100px;
             width: 20%;
+            @include breakpoint-down(medium-sm){
+                width: 100%;
+                margin-left: 0px;
+            }
         }
         &__foot{
             margin-top: 50px;
             margin-left: auto;
             margin-right: 330px;
+            @include breakpoint-down(medium-sm){
+                margin:0px auto;
+
+            }
         }
     }
 }
