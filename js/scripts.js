@@ -34,7 +34,7 @@ const featureSlide = (next,prev) =>{
             },time+=200)
         })
     }
-    if(next && featureIndex <= 2){
+    if(next && featureIndex < 2){
         newItems = featureItems[featureIndex+1].querySelectorAll('.feature__item')
     }
     if(next && featureIndex < 2 || prev && featureIndex > 0){
@@ -190,7 +190,19 @@ const carouselInnerPrev = () =>{
         carouselInner.style.transform =`translateX(${marginInner}px)`;
     }
     innerIndex--  
+  
 }
 
 prevInner.addEventListener('click',carouselInnerPrev)
 nextInner.addEventListener('click',carouselInnerNext)
+
+// animations
+
+const heroTextElsCollection = document.querySelector('.hero__text').children
+let heroTextEls = [...heroTextElsCollection]
+time = 0
+heroTextEls.forEach(el=>{
+    setTimeout(()=>{
+        el.style.animation = 'slideFromTop 1s ease-in-out forwards'
+    },time+=500)
+})
