@@ -473,7 +473,7 @@
             }
         }
         &__carousel{
-            @include createFlex(row,flex-start,center,null)
+            @include createFlex(row,flex-start,center,null);
             transition: all 1s ease-in-out;
             margin: 0px;
             padding:0px;

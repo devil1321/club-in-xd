@@ -9,14 +9,18 @@ let transition = 1
 let carPrev = true
 let carNext = true
 const featureSlide = (next,prev) =>{
-    let items = featureItems[featureIndex].querySelectorAll('.feature__item')
     let newItems;
+    let items = featureItems[featureIndex].querySelectorAll('.feature__item')
+    let width = featureItems[0].clientWidth + 100
+    window.onresize = () =>{
+        width = featureItems[0].clientWidth + 100
+    }
     if(next && featureIndex < 2){
-        translate-=120
+        translate-=width
     }
     if(prev && featureIndex > 0){
         newItems = featureItems[featureIndex-1].querySelectorAll('.feature__item')
-        translate+=120
+        translate+=width
         transition -= 0.5
     }
     if(next && featureIndex < 2 || prev && featureIndex > 0) {
@@ -25,7 +29,7 @@ const featureSlide = (next,prev) =>{
         })
         items.forEach(item =>{
             setTimeout(()=>{
-                item.style.transform= `translateX(${translate}%)`
+                item.style.transform= `translateX(${translate}px)`
                 item.style.opacity = 0
             },time+=200)
         })
@@ -46,7 +50,7 @@ const featureSlide = (next,prev) =>{
         setTimeout(()=>{
             newItems.forEach(item =>{
                 setTimeout(()=>{
-                    item.style.transform= `translateX(${translate}%)`
+                    item.style.transform= `translateX(${translate}px)`
                     item.style.opacity = 1
                 },time+=200)
             })
@@ -75,6 +79,7 @@ const next = document.querySelector('.next')
 let index = 0
 let margin = 0
 let active = 3
+
 const setActive = (position) =>{
     carouselActiveDots.forEach(dot =>{
         dot.classList.remove('artist__active')
@@ -82,8 +87,12 @@ const setActive = (position) =>{
     carouselActiveDots[position].classList.add('artist__active')
 }
 const carouselArtistsNext = () =>{
+    let width = carouselItems[0].clientWidth + 20
+    window.onresize = () =>{
+        width = carouselItems[0].clientWidth + 20
+    }
     if(index < 3){
-        margin-=405
+        margin-=width
         carouselArtist.style.transform =`translateX(${margin}px)`;
         active++
         setActive(active)
@@ -98,8 +107,12 @@ const carouselArtistsNext = () =>{
    
 }
 const carouselArtistsPrev = () =>{
+    let width = carouselItems[0].clientWidth + 20
+    window.onresize = () =>{
+        width = carouselItems[0].clientWidth + 20
+    }
     if(index > -3){
-        margin+=405
+        margin+=width
         carouselArtist.style.transform =`translateX(${margin}px)`;
         active--
         setActive(active)
@@ -112,35 +125,45 @@ const carouselArtistsPrev = () =>{
     }
     index--
 }
+
 next.addEventListener('click',() => {carouselArtistsNext(carouselItems.length)})
 prev.addEventListener('click',() => {carouselArtistsPrev(carouselItems.length)})
 // carousel artists end
 const carouselInner = document.querySelector('.artist-inner__carousel')
+const carouselInnerItem = document.querySelectorAll('.artist-inner__carousel-item')
 const prevInner = document.querySelector('.prev-inner')
 const nextInner = document.querySelector('.next-inner')
 let marginInner = 0
 let innerIndex = 0
+
 const carouselInnerNext = () =>{
+    let width = carouselInnerItem[0].clientWidth + 55
+    window.onresize = () =>{
+        width = carouselInnerItem[0].clientWidth + 55
+    }
     if(innerIndex < 3){
-        marginInner-=105.5
-        carouselInner.style.transform =`translateX(${marginInner}%)`;
+        marginInner-=width
+        carouselInner.style.transform =`translateX(${marginInner}px)`;
     }else if(innerIndex === 3){
         marginInner = 0
         innerIndex = -1
-        carouselInner.style.transform =`translateX(${marginInner}%)`;
+        carouselInner.style.transform =`translateX(${marginInner}px)`;
     }
     innerIndex++
    
 }
 const carouselInnerPrev = () =>{
-    console.log(innerIndex)
+    let width = carouselInnerItem[0].clientWidth + 55
+    window.onresize = () =>{
+        width = carouselInnerItem[0].clientWidth + 55   
+    }
     if(innerIndex > 0){
-        marginInner+=105.5
-        carouselInner.style.transform =`translateX(${marginInner}%)`;
+        marginInner+=width
+        carouselInner.style.transform =`translateX(${marginInner}px)`;
     }else if(innerIndex === 0){
-        marginInner-=105.5 * 3
+        marginInner-=width * 3
         innerIndex = 4
-        carouselInner.style.transform =`translateX(${marginInner}%)`;
+        carouselInner.style.transform =`translateX(${marginInner}px)`;
     }
     innerIndex--  
 }
