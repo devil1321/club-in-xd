@@ -975,6 +975,7 @@ a {
 }
 
 .container .artist__carousel-controls .dot {
+  cursor: pointer;
   margin: 0px 10px;
   height: 5px;
   width: 5px;
@@ -982,6 +983,8 @@ a {
   border-radius: 100%;
   -webkit-transition: 300mse;
   transition: 300mse;
+  -webkit-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
 }
 
 .container .artist__active {

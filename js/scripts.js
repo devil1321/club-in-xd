@@ -80,6 +80,29 @@ let index = 0
 let margin = 0
 let active = 3
 
+const moveToSlide = (e) =>{
+
+    let dots = [...carouselActiveDots]
+    let index = dots.indexOf(e.target)
+    let width = carouselItems[0].clientWidth + 20
+    window.onresize = () =>{
+        width = carouselItems[0].clientWidth + 20
+    }
+    if(index > 3){
+        margin = width * (index - 3) * (-1)
+        carouselArtist.style.transform =`translateX(${margin}px)`;
+        setActive(index)
+    }
+    else if(index === 3){
+        setActive(index)
+        carouselArtist.style.transform =`translateX(0px)`;
+    }else if(index < 3){
+        setActive(index)
+        margin = width * (index - 3) * (-1)
+        carouselArtist.style.transform =`translateX(${margin}px)`;
+    }
+
+}
 const setActive = (position) =>{
     carouselActiveDots.forEach(dot =>{
         dot.classList.remove('artist__active')
@@ -126,6 +149,7 @@ const carouselArtistsPrev = () =>{
     index--
 }
 
+carouselActiveDots.forEach(dot => dot.addEventListener('click',(e)=>moveToSlide(e)))
 next.addEventListener('click',() => {carouselArtistsNext(carouselItems.length)})
 prev.addEventListener('click',() => {carouselArtistsPrev(carouselItems.length)})
 // carousel artists end
