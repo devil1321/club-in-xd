@@ -428,6 +428,19 @@ a {
           align-items: center;
 }
 
+@media (max-device-width: 64em) {
+  .container .header {
+    height: 40vh;
+    padding: 0px 50px;
+  }
+}
+
+@media only screen and (min-device-width: 1366px) and (max-device-width: 1366px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) {
+  .container .header {
+    height: 70vh;
+  }
+}
+
 .container .header__circle {
   position: absolute;
   left: -35%;
@@ -464,6 +477,12 @@ a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+@media (max-device-width: 64em) {
+  .container .header .nav {
+    padding: 10px 50px 0px;
+  }
 }
 
 .container .header .nav__logo {
@@ -732,6 +751,12 @@ a {
   z-index: 2;
 }
 
+@media (max-device-width: 64em) {
+  .container .feature__image-item img {
+    margin: 0px;
+  }
+}
+
 .container .feature__text-image {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -744,6 +769,14 @@ a {
   background-color: rgba(0, 0, 0, 0.671);
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
+}
+
+@media (max-device-width: 64em) {
+  .container .feature__text-image {
+    top: -278px;
+    left: -13px;
+    z-index: 2;
+  }
 }
 
 .container .feature__text-image i {
@@ -808,6 +841,12 @@ a {
   width: 50%;
 }
 
+@media (max-device-width: 64em) {
+  .container .feature__text {
+    padding-right: 20px;
+  }
+}
+
 .container .feature__text .event {
   padding: 5px 0px 5px 10px;
   width: 100px;
@@ -867,6 +906,18 @@ a {
   color: #7900ff;
 }
 
+@media (max-device-width: 64em) {
+  .container .feature__item h2 {
+    font-size: 1.875rem;
+  }
+}
+
+@media (max-device-width: 64em) {
+  .container .feature__item p {
+    font-size: 0.875rem;
+  }
+}
+
 .container .feature__item button {
   cursor: pointer;
   font-weight: 900;
@@ -884,6 +935,12 @@ a {
   margin: 0px;
   padding: 0px;
   height: 100%;
+}
+
+@media (max-device-width: 64em) {
+  .container .feature__item button {
+    min-width: 100px;
+  }
 }
 
 .container .feature__item-day, .container .feature__item-time {
@@ -914,6 +971,12 @@ a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+@media (max-device-width: 64em) {
+  .container .feature__controls {
+    margin-right: 60px;
+  }
 }
 
 .container .feature__controls div {
@@ -1159,6 +1222,12 @@ a {
   width: 60%;
 }
 
+@media (max-device-width: 64em) {
+  .container .subscribe__form-input {
+    width: 50%;
+  }
+}
+
 .container .subscribe__form-input input {
   padding-left: 15px;
   width: 60%;
@@ -1198,6 +1267,12 @@ a {
 .container .subscribe__form-input button:hover {
   -webkit-filter: drop-shadow(0px 0px 10px #7900FF);
           filter: drop-shadow(0px 0px 10px #7900FF);
+}
+
+@media (max-device-width: 64em) {
+  .container .subscribe__form-input button {
+    min-width: 30%;
+  }
 }
 
 .container .subscribe__article {
@@ -1466,7 +1541,29 @@ a {
 }
 
 .container .party {
-  padding: 0px 80px;
+  padding: 0px 20px 0px 50px;
+}
+
+.container .party p {
+  width: 66%;
+}
+
+@media (max-device-width: 64em) {
+  .container .party {
+    padding: 0px 20px 0px 50px;
+  }
+  .container .party p {
+    width: 70%;
+  }
+}
+
+@media only screen and (min-device-width: 1366px) and (max-device-width: 1366px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2) {
+  .container .party {
+    padding: 0px 40px 0px 80px;
+  }
+  .container .party p {
+    width: 64%;
+  }
 }
 
 .container .party__heading {
@@ -1523,8 +1620,20 @@ a {
   width: 44%;
 }
 
+@media (max-device-width: 64em) {
+  .container .party__image:nth-of-type(1) {
+    width: 43%;
+  }
+}
+
 .container .party__image:nth-of-type(1) img {
   width: 140%;
+}
+
+@media (max-device-width: 64em) {
+  .container .party__image:nth-of-type(1) img {
+    width: 180%;
+  }
 }
 
 .container .party__image:nth-of-type(2) {
@@ -1535,12 +1644,24 @@ a {
   width: 150%;
 }
 
+@media (max-device-width: 64em) {
+  .container .party__image:nth-of-type(2) img {
+    width: 200%;
+  }
+}
+
 .container .party__image:nth-of-type(3) {
   width: 25%;
 }
 
 .container .party__image:nth-of-type(3) img {
   width: 140%;
+}
+
+@media (max-device-width: 64em) {
+  .container .party__image:nth-of-type(3) img {
+    width: 200%;
+  }
 }
 
 .container .party__image:nth-of-type(4) {
@@ -1551,12 +1672,30 @@ a {
   width: 160%;
 }
 
+@media (max-device-width: 64em) {
+  .container .party__image:nth-of-type(4) img {
+    width: 230%;
+  }
+}
+
 .container .party__image:nth-of-type(5) {
   width: 55%;
 }
 
+@media (max-device-width: 64em) {
+  .container .party__image:nth-of-type(5) {
+    width: 53%;
+  }
+}
+
 .container .party__image:nth-of-type(5) img {
   width: 135%;
+}
+
+@media (max-device-width: 64em) {
+  .container .party__image:nth-of-type(5) img {
+    width: 180%;
+  }
 }
 
 .container .party__image:nth-of-type(6) {
@@ -1567,12 +1706,24 @@ a {
   width: 110%;
 }
 
+@media (max-device-width: 64em) {
+  .container .party__image:nth-of-type(6) img {
+    width: 180%;
+  }
+}
+
 .container .party__image:nth-of-type(7) {
-  width: 34%;
+  width: 33%;
 }
 
 .container .party__image:nth-of-type(7) img {
   width: 130%;
+}
+
+@media (max-device-width: 64em) {
+  .container .party__image:nth-of-type(7) img {
+    width: 180%;
+  }
 }
 
 .container .party__image:nth-of-type(8) {
@@ -1583,12 +1734,24 @@ a {
   width: 130%;
 }
 
+@media (max-device-width: 64em) {
+  .container .party__image:nth-of-type(8) img {
+    width: 180%;
+  }
+}
+
 .container .party__image:nth-of-type(9) {
   width: 35%;
 }
 
 .container .party__image:nth-of-type(9) img {
   width: 145%;
+}
+
+@media (max-device-width: 64em) {
+  .container .party__image:nth-of-type(9) img {
+    width: 200%;
+  }
 }
 
 .container .contacts {
@@ -1731,12 +1894,30 @@ a {
   width: 40%;
 }
 
+@media (max-device-width: 64em) {
+  .container .footer__column-1 {
+    width: 35%;
+  }
+}
+
 .container .footer__column-1 img {
   width: 40%;
 }
 
+@media (max-device-width: 64em) {
+  .container .footer__column-1 img {
+    width: 50%;
+  }
+}
+
 .container .footer__column-2 {
   width: 10%;
+}
+
+@media (max-device-width: 64em) {
+  .container .footer__column-2 {
+    width: 15%;
+  }
 }
 
 .container .footer__column-3 {
@@ -1746,6 +1927,12 @@ a {
   margin-left: 100px;
   list-style-type: none;
   color: white;
+}
+
+@media (max-device-width: 64em) {
+  .container .footer__column-3 {
+    margin-left: 50px;
+  }
 }
 
 .container .footer__column-3 li {

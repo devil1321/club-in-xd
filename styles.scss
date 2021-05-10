@@ -13,6 +13,17 @@
         max-width: 100vw;
         height: 100vh;
         @include createFlex('row',space-between,center,null);
+        @include breakpoint-down(medium){
+            height: 40vh;
+            padding: 0px 50px;
+        }
+        @media only screen 
+        and (min-device-width: 1366px) 
+        and (max-device-width: 1366px) 
+        and (orientation: landscape) 
+        and (-webkit-min-device-pixel-ratio: 2) {
+            height: 70vh;
+        }
         &__circle{
             position: absolute;
             left:-35%;
@@ -33,6 +44,9 @@
             width: 100vw;
             transform:translateX(-50%);
             @include createFlex('row',space-between,center,null);
+            @include breakpoint-down(medium){
+                padding: 10px 50px 0px;
+            }
             &__logo{
                 width: 20%;
             }
@@ -179,7 +193,9 @@
                 top:0px;
                 left:0px;
                 z-index: 2;
-            }
+                @include breakpoint-down(medium){
+                    margin:0px;
+                }            }
         }
         &__text-image{
             box-sizing: border-box;
@@ -192,6 +208,11 @@
             background-color: rgba(0, 0, 0, 0.671);
             border-bottom-left-radius:5px;
             border-bottom-right-radius:5px;
+            @include breakpoint-down(medium){
+                top:-278px;
+                left:-13px;
+                z-index: 2;
+            }
             i{
                 margin-right: 5px;
                 font-size: pxToRem(20);
@@ -223,6 +244,9 @@
             padding-top: 35px;
             padding-right: 100px;
             width: 50%;
+            @include breakpoint-down(medium){
+                padding-right: 20px;
+            }
             .event{
                 padding:5px 0px 5px 10px;
                 width: 100px;
@@ -251,6 +275,14 @@
             h2{
                 font-size: pxToRem(40);
                 color:$purple;
+                @include breakpoint-down(medium){
+                    font-size: pxToRem(30);
+                }
+            }
+            p{
+                @include breakpoint-down(medium){
+                    font-size: pxToRem(14);
+                }
             }
             button{
                 @include button;
@@ -260,6 +292,9 @@
                 margin: 0px;
                 padding:0px;
                 height:100%;    
+                @include breakpoint-down(medium){
+                    min-width: 100px;
+                }
             }        
             &-day,&-time{
                 color:$light-green;
@@ -275,6 +310,9 @@
             width: 70px;
             color:$light-green;
             margin-right: 53px;
+            @include breakpoint-down(medium){
+                margin-right: 60px;
+            }
             div{
                 padding:10px 20px;
                 margin: 0px 5px;
@@ -410,6 +448,9 @@
             @include createFlex(row,space-between,center,wrap);
             &-input{
                 width: 60%;
+                @include breakpoint-down(medium){
+                    width: 50%;
+                }
                 input{
                     padding-left: 15px;
                     width: 60%;
@@ -430,6 +471,9 @@
                     filter: drop-shadow(0px 0px 0px black);
                     background-position: center center;
                     background-size: 200%;
+                    @include breakpoint-down(medium){
+                        min-width: 30%;
+                    }
                 }
             }
         }
@@ -555,7 +599,26 @@
         }
     }
     .party{
-        padding:0px 80px;
+        padding:0px 20px 0px 50px;
+        p{
+            width: 66%;
+        }
+        @include breakpoint-down(medium){
+            padding:0px 20px 0px 50px;
+            p{
+                width: 70%;
+            }
+        }
+        @media only screen 
+            and (min-device-width: 1366px) 
+            and (max-device-width: 1366px) 
+            and (orientation: landscape) 
+            and (-webkit-min-device-pixel-ratio: 2) {
+                padding:0px 40px 0px 80px;
+                p{
+                    width: 64%;
+                }
+            }
         &__heading{
             @include createFlex(row,space-between,center,null);
             h2{
@@ -575,56 +638,89 @@
         }
         &__image:nth-of-type(1){
             width: 44%;
+            @include breakpoint-down(medium){
+                width: 43%;
+            }
             img{
                 width: 140%;
+                @include breakpoint-down(medium){
+                    width: 180%;
+                }
             }
         }
         &__image:nth-of-type(2){
             width: 25%;
             img{
                 width: 150%;
+                @include breakpoint-down(medium){
+                    width: 200%;
+                }
             }
         }
         &__image:nth-of-type(3){
             width: 25%;
             img{
                 width: 140%;
+                @include breakpoint-down(medium){
+                    width: 200%;
+                }
             }
         }
         &__image:nth-of-type(4){
             width: 19%;
             img{
                 width: 160%;
+                @include breakpoint-down(medium){
+                    width:230%;
+                }
             }
         }
         &__image:nth-of-type(5){
             width: 55%;
+            @include breakpoint-down(medium){
+                width: 53%;
+            }
             img{
                 width: 135%;
+                @include breakpoint-down(medium){
+                    width:180%;
+                }
             }
         }
         &__image:nth-of-type(6){
             width: 20%;
             img{
                 width: 110%;
+                @include breakpoint-down(medium){
+                    width:180%;
+                }
             }
         }
         &__image:nth-of-type(7){
-            width: 34%;
+            width: 33%;
             img{
                 width: 130%;
+                @include breakpoint-down(medium){
+                    width:180%;
+                }
             }
         }
         &__image:nth-of-type(8){
             width: 25%;
             img{
                 width: 130%;
+                @include breakpoint-down(medium){
+                    width:180%;
+                }
             }
         }
         &__image:nth-of-type(9){
             width: 35%;
             img{
                 width: 145%;
+                @include breakpoint-down(medium){
+                    width:200%;
+                }
             }
         }
     }
@@ -683,6 +779,7 @@
         }
         &__icons{
             @include createFlex(row,center,center,null);
+            
         }
         &__icon{
             height: 30px;
@@ -697,14 +794,21 @@
         }
         &__column-1{
             width: 40%;
+            @include breakpoint-down(medium){
+                width: 35%;;
+            }
             img{
                 width: 40%;
+                @include breakpoint-down(medium){
+                width: 50%;;
+            }
             }
         }
         &__column-2{
             width: 10%;
-         
-           
+            @include breakpoint-down(medium){
+                width: 15%;;
+            }
         }
         &__column-3{
             width: 10%;
@@ -713,6 +817,9 @@
             margin-left: 100px;
             list-style-type: none;
             color:white;
+            @include breakpoint-down(medium){
+                margin-left: 50px;
+            }
             li{
                 margin: 10px 0px;
                 max-width: 65px;
