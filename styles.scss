@@ -56,7 +56,7 @@
             }
             &__list-wrapper{
                 width: 60%;
-                @include createFlex('row',center,center,null)
+                @include createFlex('row',center,center,null);
                 @include breakpoint-down(medium-sm){
                     width: 50%;
                 }
