@@ -68,12 +68,12 @@
                 padding: 10px 50px 0px;
             }
             @include breakpoint-down(small){
-                padding: 10px 25px 0px;
+                padding: 10px 5px 0px 25px;
             }
             &__logo{
                 width: 20%;
                 @include breakpoint-down(small){
-                    width: 30%;
+                    width: 40%;
                 }
             }
             &__list-wrapper{
@@ -187,6 +187,9 @@
             &__text{
                 margin-top:50px;
                 width: 50%;
+                @include breakpoint-down(small){
+                    width: 100%;
+                }
                 p{
                     opacity: 0;
                     word-spacing:5px;
@@ -197,6 +200,7 @@
                     left:0px;
                     @include breakpoint-down(small){
                         display: none;
+                        width: 100%;
                     }
                 }
                 h1{
@@ -206,7 +210,7 @@
                     left:0px;
                     transition: all 1s ease-in-out;
                     @include breakpoint-down(small){
-                        font-size:pxToRem(40);
+                        font-size:pxToRem(30);
                         width:100%;
                     }
                 }
@@ -218,7 +222,12 @@
                 top:100%;
                 left:0px;
                 @include breakpoint-down(small){
+                    width: 55%;
                     margin-top: 40px;
+                    position: absolute;
+                    top:-40px;
+                    left: 45%;
+                    z-index: -1;
                 }
                 &::before{
                     content: '';
@@ -343,6 +352,7 @@
             }
             @media (max-device-width:375px) and (max-device-height:812px) and (orientation:portrait){
                 top:-272px;
+                left:11px;
             }
           
             @media (max-device-width:320px) and (max-device-height:568px) and (orientation:portrait){
@@ -644,9 +654,9 @@
             @include breakpoint-down(medium-sm){
                 padding:0px 35px 30px;
             }
-           @include breakpoint-down-l(medium){
+            @include breakpoint-down-l(medium){
                 padding:0px 20px;
-           }
+            }
             &-text{
                 @include breakpoint-down(medium-sm){
                     width: 50%;
@@ -705,6 +715,12 @@
                         min-width: 32%;
                         background-size: 250%
                     }
+                    @include breakpoint-down(small){
+                        position: relative;
+                        left:0px;
+                        top:1px;
+                        background-size: 275%;
+                    }
                 }
             }
         }
@@ -717,12 +733,12 @@
             @include breakpoint-down(small){
                 padding: 50px 30px 0px;
             }
-           h2,p{
+            h2,p{
                color: black;
-           }
-           p{
+            }    
+            p{
                line-height: 2;
-           }
+            }
         }
         &__text{
             width: 60%;
@@ -749,14 +765,14 @@
                     left:250%;
                     top:-430px;
                 }
-                @include breakpoint-down(small){
-                    top:-550px;
-                }
                 @include breakpoint-down-l(small-se){
                     top:-440px;
                 }
                 @media (max-device-width:540px) and (max-device-height:720px) and (orientation:portrait){
                     top:-435px;
+                }
+                @include breakpoint-down(small){
+                    top:-550px;
                 }
             }
             img:last-of-type{
@@ -769,17 +785,16 @@
                     left:270%;
                     top:-410px;
                 }
-                @include breakpoint-down(small){
-                    top:-530px;
-                }
                 @include breakpoint-down-l(small-se){
                     top:-430px;
                 }
                 @media (max-device-width:540px) and (max-device-height:720px) and (orientation:portrait){
                     top:-425px;
                 }
+                @include breakpoint-down(small){
+                    top:-530px;
+                }
             }
-
         }
         &__footer{
             box-sizing: border-box;
@@ -788,7 +803,11 @@
             width: 100%;
             @include createFlex(row,space-between,center,wrap);
             @include breakpoint-down(medium-sm){
-                padding:0px 140px 0px 50px;
+                padding:0px 80px;
+            }
+            @include breakpoint-down(small){
+                padding: 0px;
+                margin-left: -7%;;
             }
             &-logo{
                width: 20%;
