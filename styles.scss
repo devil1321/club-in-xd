@@ -21,6 +21,16 @@
             height: 70vh;
             padding: 0px 50px;
         }
+        @include breakpoint-down-l(medium-sm){
+            height: 120vh;
+            padding: 0px 50px;
+        }
+        @media (max-device-width:720px) and (max-device-height:540px) and (orientation:landscape){
+            height: 80vh;
+        }
+        @include breakpoint-down-l(small-se){
+            height: 130vh;
+        }
         @media only screen 
         and (min-device-width: 1366px) 
         and (max-device-width: 1366px) 
@@ -277,6 +287,35 @@
                 left:12px;
                 width: 90.3%;
             }
+            @media (max-device-width:540px) and (max-device-height:720px) and (orientation:portrait){
+                top:-260px;
+                left:15px;
+                width: 90%;
+            }
+            @media (max-device-width:360px) and (max-device-height:640px) and (orientation:portrait){
+                top:-270px;
+            }
+            @media (max-device-width:375px) and (max-device-height:812px) and (orientation:portrait){
+                top:-272px;
+            }
+          
+            @media (max-device-width:320px) and (max-device-height:568px) and (orientation:portrait){
+                left: 10px;
+            }
+            @include breakpoint-down-l(small-l){
+                left:16px;
+                top:-262px;
+            }
+            @media (max-device-width:823px) and (max-device-height:411px) and (orientation:landscape){
+                top:-252px;
+            }
+              @media (max-device-width:823px) and (max-device-height:411px) and (orientation:landscape){
+                top:-252px;
+            }
+            @media (max-device-width:667px) and (max-device-height:375px) and (orientation:landscape){
+                left:-9px;
+                top:-252px;
+            }
             i{
                 margin-right: 5px;
                 font-size: pxToRem(20);
@@ -439,7 +478,7 @@
                 border-radius: 5px;
                 filter: drop-shadow(0px 0px 10px black);
                 @include breakpoint-down(medium-sm){
-                    min-width: 30%;
+                    min-width: 45%;
                 }
                 @include breakpoint-down(small){
                     min-width: 90%;
@@ -559,7 +598,9 @@
             @include breakpoint-down(medium-sm){
                 padding:0px 35px 30px;
             }
-           
+           @include breakpoint-down-l(medium){
+                padding:0px 20px;
+           }
             &-text{
                 @include breakpoint-down(medium-sm){
                     width: 50%;
@@ -573,6 +614,12 @@
                         width: 100%;
                     }
                 }
+                @include breakpoint-down-l(small-l){
+                    width: 100%;
+                    p{
+                        width: 100%;
+                    }
+                }
             }
             &-input{
                 width: 60%;
@@ -580,6 +627,9 @@
                     width: 50%;
                 }
                 @include breakpoint-down(small){
+                    width: 100%;
+                }
+                @include breakpoint-down-l(small-l){
                     width: 100%;
                 }
                 input{
@@ -656,6 +706,12 @@
                 @include breakpoint-down(small){
                     top:-550px;
                 }
+                @include breakpoint-down-l(small-se){
+                    top:-440px;
+                }
+                @media (max-device-width:540px) and (max-device-height:720px) and (orientation:portrait){
+                    top:-435px;
+                }
             }
             img:last-of-type{
                 width: 80%;
@@ -669,6 +725,12 @@
                 }
                 @include breakpoint-down(small){
                     top:-530px;
+                }
+                @include breakpoint-down-l(small-se){
+                    top:-430px;
+                }
+                @media (max-device-width:540px) and (max-device-height:720px) and (orientation:portrait){
+                    top:-425px;
                 }
             }
 
@@ -694,9 +756,13 @@
             left:-15%;
             width: 150px;
             @include createFlex(row,space-between,center,null);
+            @media (max-device-width:540px) and (max-device-height:720px) and (orientation:portrait){
+                margin-left: 60px;
+            }
             @include breakpoint-down(small){
                 left:-4%;
             }
+            
             img{
                 margin:0px 10px;
                 width: 100%;
@@ -822,6 +888,12 @@
             @include breakpoint-down(small){
                 width: 100%;
             }
+            @include breakpoint-down-l(small-l){
+                width: 39%;
+            }
+            @include breakpoint-down-l(small-se){
+                width: 100%;
+            }
             img{
                 width: 140%;
                 @include breakpoint-down(medium){
@@ -833,6 +905,12 @@
                 @include breakpoint-down(small){
                     width: 100%;
                 }
+                @include breakpoint-down-l(small-l){
+                    width: 260%;
+                }
+                @include breakpoint-down-l(small-se){
+                    width: 100%;
+                }
             }
         }
         &__image:nth-of-type(2){
@@ -840,15 +918,22 @@
             @include breakpoint-down(small){
                 width: 100%;
             }
+            
             img{
                 width: 150%;
                 @include breakpoint-down(medium){
                     width: 200%;
                 }
                 @include breakpoint-down(medium-sm){
-                    width: 240%;
+                    width: 260%;
                 }
                 @include breakpoint-down(small){
+                    width: 100%;
+                }
+                @include breakpoint-down-l(small-l){
+                    width: 295%;
+                }
+                @include breakpoint-down-l(small-se){
                     width: 100%;
                 }
             }
@@ -869,6 +954,12 @@
                 @include breakpoint-down(small){
                     width: 100%;
                 }
+                @include breakpoint-down-l(small-l){
+                    width: 290%;
+                }
+                @include breakpoint-down-l(small-se){
+                    width: 100%;
+                }
             }
         }
         &__image:nth-of-type(4){
@@ -882,9 +973,15 @@
                     width:230%;
                 }
                 @include breakpoint-down(medium-sm){
-                    width: 260%;
+                    width: 270%;
                 }
                 @include breakpoint-down(small){
+                    width: 100%;
+                }
+                @include breakpoint-down-l(small-l){
+                    width: 320%;
+                }
+                @include breakpoint-down-l(small-se){
                     width: 100%;
                 }
             }
@@ -906,9 +1003,15 @@
                     width:180%;
                 }
                 @include breakpoint-down(medium-sm){
-                    width: 240%;
+                    width: 250%;
                 }
                 @include breakpoint-down(small){
+                    width: 100%;
+                }
+                @include breakpoint-down-l(small-l){
+                    width: 290%;
+                }
+                @include breakpoint-down-l(small-se){
                     width: 100%;
                 }
             }
@@ -924,6 +1027,12 @@
                     width:180%;
                 }
                 @include breakpoint-down(small){
+                    width: 100%;
+                }
+                @include breakpoint-down-l(small-l){
+                    width: 290%;
+                }
+                @include breakpoint-down-l(small-se){
                     width: 100%;
                 }
             }
@@ -947,11 +1056,23 @@
                 @include breakpoint-down(small){
                     width: 100%;
                 }
+                @include breakpoint-down-l(small-l){
+                    width: 290%;
+                }
+                @include breakpoint-down-l(small-se){
+                    width: 100%;
+                }
             }
         }
         &__image:nth-of-type(8){
             width: 25%;
             @include breakpoint-down(small){
+                width: 100%;
+            }
+            @include breakpoint-down-l(small-l){
+                width: 24%;
+            }
+            @include breakpoint-down-l(small-se){
                 width: 100%;
             }
             img{
@@ -963,6 +1084,12 @@
                     width: 240%;
                 }
                 @include breakpoint-down(small){
+                    width: 100%;
+                }
+                @include breakpoint-down-l(small-l){
+                    width: 290%;
+                }
+                @include breakpoint-down-l(small-se){
                     width: 100%;
                 }
             }
@@ -978,9 +1105,15 @@
                     width:200%;
                 }
                 @include breakpoint-down(medium-sm){
-                    width: 240%;
+                    width: 250%;
                 }
                 @include breakpoint-down(small){
+                    width: 100%;
+                }
+                @include breakpoint-down-l(small-l){
+                    width: 290%;
+                }
+                @include breakpoint-down-l(small-se){
                     width: 100%;
                 }
             }
@@ -998,11 +1131,18 @@
         }
         &__image{
             position:absolute;
-           top:-100px;  right: 20px;
-           
+            top:-100px;  
+            right: 20px;
             width: 20%;
             @include breakpoint-down(small){
                 width: 40%;
+            }
+            @include breakpoint-down-l(small-l){
+                top:-50px;
+            }
+            @include breakpoint-down-l(small-se){
+                top:-100px;
+                width: 30%;
             }
         }
         h2,p{
@@ -1076,6 +1216,9 @@
             @include breakpoint-down(medium-sm){
                 width: 30%;
             }
+            @include breakpoint-down-l(medium){
+                margin-left: auto;
+            }
             @include breakpoint-down(small){
                 width: 100%;
             }
@@ -1103,6 +1246,9 @@
             @include breakpoint-down(medium-sm){
                 width: 30%;
                 margin-left: 50px;
+            }
+            @include breakpoint-down-l(medium){
+                margin-left: 0px;
             }
             @include breakpoint-down(small){
                 width: 60%;
