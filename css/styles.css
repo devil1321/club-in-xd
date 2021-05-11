@@ -402,6 +402,142 @@ a {
   color: #ffffff;
 }
 
+svg {
+  height: 80px;
+  position: absolute;
+  width: 80px;
+}
+
+.plates {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  max-height: 160px;
+  width: 640px;
+}
+
+.plate {
+  height: 80px;
+  width: 80px;
+}
+
+.burger {
+  -webkit-filter: url(#gooeyness);
+          filter: url(#gooeyness);
+}
+
+.x {
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  -webkit-transition: -webkit-transform 400ms;
+  transition: -webkit-transform 400ms;
+  transition: transform 400ms;
+  transition: transform 400ms, -webkit-transform 400ms;
+}
+
+.line {
+  fill: none;
+  stroke: white;
+  stroke-width: 3px;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  -webkit-transform-origin: 50%;
+          transform-origin: 50%;
+  -webkit-transition: stroke-dasharray 500ms 200ms, stroke-dashoffset 500ms 200ms, -webkit-transform 500ms 200ms;
+  transition: stroke-dasharray 500ms 200ms, stroke-dashoffset 500ms 200ms, -webkit-transform 500ms 200ms;
+  transition: stroke-dasharray 500ms 200ms, stroke-dashoffset 500ms 200ms, transform 500ms 200ms;
+  transition: stroke-dasharray 500ms 200ms, stroke-dashoffset 500ms 200ms, transform 500ms 200ms, -webkit-transform 500ms 200ms;
+}
+
+.x .line {
+  stroke-width: 4.5px;
+}
+
+.active .x {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  -webkit-transition: -webkit-transform 400ms 350ms;
+  transition: -webkit-transform 400ms 350ms;
+  transition: transform 400ms 350ms;
+  transition: transform 400ms 350ms, -webkit-transform 400ms 350ms;
+}
+
+/* El segundo plato */
+.plate2 .line1 {
+  stroke-dasharray: 21 185.62753295898438;
+  -webkit-transition-delay: 0;
+          transition-delay: 0;
+}
+
+.plate2 .line2 {
+  stroke-dasharray: 21 178.6514129638672;
+  -webkit-transition-delay: 30ms;
+          transition-delay: 30ms;
+}
+
+.plate2 .line3 {
+  stroke-dasharray: 21 197.92425537109375;
+  -webkit-transition-delay: 60ms;
+          transition-delay: 60ms;
+}
+
+.plate2 .line4 {
+  stroke-dasharray: 21 190.6597137451172;
+  -webkit-transition-delay: 90ms;
+          transition-delay: 90ms;
+}
+
+.plate2 .line5 {
+  stroke-dasharray: 21 208.52874755859375;
+  -webkit-transition-delay: 120ms;
+          transition-delay: 120ms;
+}
+
+.plate2 .line6 {
+  stroke-dasharray: 21 186.59703063964844;
+  -webkit-transition-delay: 150ms;
+          transition-delay: 150ms;
+}
+
+.active.plate2 .line1 {
+  stroke-dasharray: 5 185.62753295898438;
+  stroke-dashoffset: -147px;
+}
+
+.active.plate2 .line2 {
+  stroke-dasharray: 5 178.6514129638672;
+  stroke-dashoffset: -143px;
+}
+
+.active.plate2 .line3 {
+  stroke-dasharray: 5 197.92425537109375;
+  stroke-dashoffset: -180px;
+}
+
+.active.plate2 .line4 {
+  stroke-dasharray: 5 190.6597137451172;
+  stroke-dashoffset: -165px;
+}
+
+.active.plate2 .line5 {
+  stroke-dasharray: 5 208.52874755859375;
+  stroke-dashoffset: -145px;
+}
+
+.active.plate2 .line6 {
+  stroke-dasharray: 5 186.59703063964844;
+  stroke-dashoffset: -180px;
+}
+
+.active.plate2 .x {
+  -webkit-transition: -webkit-transform 400ms 250ms;
+  transition: -webkit-transform 400ms 250ms;
+  transition: transform 400ms 250ms;
+  transition: transform 400ms 250ms, -webkit-transform 400ms 250ms;
+}
+
 .container {
   background-color: #21212E;
 }
@@ -437,14 +573,14 @@ a {
 
 @media (max-device-width: 64em) and (orientation: landscape) {
   .container .header {
-    height: 70vh;
+    height: 80vh;
     padding: 0px 50px;
   }
 }
 
 @media (max-device-width: 63em) and (orientation: landscape) {
   .container .header {
-    height: 120vh;
+    height: 130vh;
     padding: 0px 50px;
   }
 }
@@ -458,6 +594,12 @@ a {
 @media (max-device-width: 35.5em) and (orientation: landscape) {
   .container .header {
     height: 130vh;
+  }
+}
+
+@media (max-device-width: 667px) and (max-device-height: 375px) and (orientation: landscape) {
+  .container .header {
+    height: 110vh;
   }
 }
 
@@ -517,8 +659,20 @@ a {
   }
 }
 
+@media (max-device-width: 39.9375em) {
+  .container .header .nav {
+    padding: 10px 25px 0px;
+  }
+}
+
 .container .header .nav__logo {
   width: 20%;
+}
+
+@media (max-device-width: 39.9375em) {
+  .container .header .nav__logo {
+    width: 30%;
+  }
 }
 
 .container .header .nav__list-wrapper {
@@ -544,6 +698,28 @@ a {
   }
 }
 
+@media (max-device-width: 64em) {
+  .container .header .nav__list-wrapper {
+    overflow-x: hidden;
+    height: 0%;
+    opacity: 0.9;
+    display: block;
+    padding: 0px;
+    width: 80%;
+    position: absolute;
+    top: 100px;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+    background-color: #12121a;
+    border-radius: 5px;
+    -webkit-transition: all 500ms ease-in-out;
+    transition: all 500ms ease-in-out;
+    -webkit-box-shadow: 0px 0px 10px inset #4d4c4c, 0px 0px 0px black;
+            box-shadow: 0px 0px 10px inset #4d4c4c, 0px 0px 0px black;
+  }
+}
+
 .container .header .nav__btn-wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -558,6 +734,24 @@ a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+@media (max-device-width: 64em) {
+  .container .header .nav__btn-wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
 }
 
 .container .header .nav__list {
@@ -579,10 +773,36 @@ a {
           align-items: center;
 }
 
+@media (max-device-width: 64em) {
+  .container .header .nav__list {
+    display: block;
+    width: 90%;
+    text-align: center;
+  }
+}
+
+@media (max-device-width: 39.9375em) {
+  .container .header .nav__list {
+    width: 80%;
+  }
+}
+
+@media (max-device-width: 35.5em) {
+  .container .header .nav__list {
+    width: 75%;
+  }
+}
+
 .container .header .nav__item {
   font-weight: 900;
   font-size: 0.875rem;
   margin-right: 30px;
+}
+
+@media (max-device-width: 64em) {
+  .container .header .nav__item {
+    margin: 20px 0px;
+  }
 }
 
 .container .header .nav__item:nth-of-type(3) {
@@ -678,6 +898,12 @@ a {
           align-items: center;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+}
+
+@media (max-device-width: 39.9375em) {
+  .container .header .hero {
+    margin-top: 50px;
+  }
 }
 
 .container .header .hero__text {

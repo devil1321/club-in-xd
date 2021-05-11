@@ -206,3 +206,19 @@ heroTextEls.forEach(el=>{
         el.style.animation = 'slideFromTop 1s ease-in-out forwards'
     },time+=500)
 })
+
+
+const navList = document.querySelector('.nav__list-wrapper');
+const navBtn = document.querySelector('.plate')
+console.log(navBtn)
+const toggleNav = () =>{
+    navBtn.classList.toggle('active')
+    if(navBtn.classList.contains('active')){
+        navList.style.padding = '20px'
+        navList.style.height = '230px'
+    }else{
+        navList.style.padding = '0px'
+        navList.style.height = '0%'
+    }
+}
+navBtn.addEventListener('click',toggleNav)
