@@ -408,19 +408,16 @@ svg {
   width: 80px;
 }
 
-.plates {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  max-height: 160px;
-  width: 640px;
-}
-
 .plate {
+  display: none;
   height: 80px;
   width: 80px;
+}
+
+@media (max-device-width: 64em) {
+  .plate {
+    display: block;
+  }
 }
 
 .burger {

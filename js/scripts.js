@@ -108,6 +108,7 @@ const setActive = (position) =>{
         dot.classList.remove('artist__active')
     })
     carouselActiveDots[position].classList.add('artist__active')
+    active = position
 }
 const carouselArtistsNext = () =>{
     let width = carouselItems[0].clientWidth + 20
